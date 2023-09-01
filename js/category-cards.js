@@ -16,21 +16,35 @@ const displayCategoryCards = (category) =>{
     cardsContainer.textContent ='';
 
     if(category.length <= 0){
-        cardsContainer.innerText = 'No data here'
+        
+        cardsContainer.innerHTML = `
+           <div class="w-full col-span-1 md:col-span-2 lg:col-span-4 mt-10 md:mt-16 lg:mt-24" >
+                <div class="hero w-11/12 mx-auto ">
+                    <div class="hero-content text-center">
+                        <div class="max-w-md">
+                            <img class="w-1/4 md:w-1/3 mx-auto mb-4" src="Icon.png" alt="" />
+                            <h1 class=" text-2xl md:text-4xl font-bold">Oops!! Sorry, There is no content here</h1>
+                        </div>
+                    </div>
+                </div>
+           </div>
+                                    `;
     }
 console.log(category.length);
     category.forEach(cat => {
         // console.log(typeof cat.others.views);
 
-        const [hour,min] = getPostedTime(cat.others.posted_date);
-        const postedDate = `${hour}hrs ${min}mins ago`;
+        const postedArray = getPostedTime(cat.others.posted_date);
+        console.log(postedArray);
+
+const postedDate = `${postedArray[0]}hrs ${postedArray[1]}mins ago`;  
 
         const cardDiv = document.createElement('div');
         cardDiv.classList = `card  rounded-lg`;
         cardDiv.innerHTML = `
                 <figure class="p-0 relative">
                     <img class="w-full h-[200px]" src=${cat.thumbnail} alt="Shoes" />
-                    <p class="absolute right-4 bottom-4 text-white bg-[#171717] rounded p-1 ">${[hour,min] ? postedDate : 'Who are you'}</p>
+                    <p class="absolute right-4 bottom-4 text-white bg-[#171717] rounded p-1 ">${postedArray ? postedDate : ''}</p>
                 </figure>
                 <div class="card-body p-0 py-5">
                 
@@ -67,7 +81,10 @@ const displayInitialCategory = () =>{
 const  getPostedTime = (time) =>{
 
 const parsedTime = parseFloat(time);
-console.log(parsedTime);
+// console.log(parsedTime);
+if(isNaN(parsedTime)){
+    return '';
+}
 const hour = Math.floor(parsedTime / 3600);
 const rem = parsedTime % 3600;
 const min = Math.floor(rem / 60);
