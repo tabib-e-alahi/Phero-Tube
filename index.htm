@@ -10,8 +10,42 @@
     <!-- daisy-ui links------------------- -->
 
     <title>PHero-Tube</title>
+    <style>
+        .custom-color{
+            background-color: #FF1F3D;
+        }
+    </style>
 </head>
-<body>
+<body class="md:w-11/12 mx-auto">
+
+    <header class="lg:mb-8">
+
+        <nav class="navbar bg-base-100 py-6 lg:py-10 ">
+
+            <div class="navbar-start">
+              <div class="dropdown">
+
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box ">
+                <a class="btn custom-color  text-white" href="blog.html">Blog</a>  
+                </ul>
+              </div>
+              <img class="w-2/3 md:w-1/3 lg:w-1/4" src="Logo.png" alt="">
+            </div>
+            <div class="navbar-center  hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+               <button class="btn py-2 px-5">Sort By View</button>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <a class="hidden lg:inline-flex py-2 px-5 custom-color text-white rounded-md" href="blog.html">Blog</a>
+              <button class=" btn py-0  lg:hidden">Sort By View</button>
+            </div>
+        </nav>
+        <hr class="hidden lg:flex bg-black">
+    </header>
     
 </body>
 </html>
