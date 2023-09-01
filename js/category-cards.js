@@ -9,6 +9,7 @@ const loadCategoryCards = async(id) =>{
 }
 
 const displayCategoryCards = (category) =>{
+    
 
     const cardsContainer = document.getElementById('card-container');
 
@@ -21,11 +22,16 @@ console.log(category.length);
     category.forEach(cat => {
         // console.log(typeof cat.others.views);
 
+        const [hour,min] = getPostedTime(cat.others.posted_date);
+        const postedDate = `${hour}hrs ${min}mins ago`;
+
         const cardDiv = document.createElement('div');
         cardDiv.classList = `card  rounded-lg`;
         cardDiv.innerHTML = `
-                <figure class="p-0"><img class="w-full
-                h-[200px]" src=${cat.thumbnail} alt="Shoes" /></figure>
+                <figure class="p-0 relative">
+                    <img class="w-full h-[200px]" src=${cat.thumbnail} alt="Shoes" />
+                    <p class="absolute right-4 bottom-4 text-white bg-[#171717] rounded p-1 ">${[hour,min] ? postedDate : 'Who are you'}</p>
+                </figure>
                 <div class="card-body p-0 py-5">
                 
                     <div class="flex items-start gap-3">
@@ -52,3 +58,21 @@ console.log(category.length);
     });
 
 }
+
+const displayInitialCategory = () =>{
+    loadCategoryCards(1000)
+}
+
+// get post time =================
+const  getPostedTime = (time) =>{
+
+const parsedTime = parseFloat(time);
+console.log(parsedTime);
+const hour = Math.floor(parsedTime / 3600);
+const rem = parsedTime % 3600;
+const min = Math.floor(rem / 60);
+
+return [hour,min];
+}
+
+displayInitialCategory();

@@ -14,8 +14,10 @@ const displayCategoryButtons = categories =>{
         categoryButton.classList.add('btn')
         categoryButton.innerText = category.category;
         categoryButton.addEventListener("click", function () {
-            loadCategoryCards(category.category_id) // Call the buttonClick function with the current ID (i)
+            loadCategoryCards(category.category_id);
+            //  categoryButton.classList.add('custom-color')
         });
+        
         categoryButtonsContainer.appendChild(categoryButton);
     } )
 }
