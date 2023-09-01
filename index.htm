@@ -18,9 +18,13 @@
       .custom-color {
         background-color: #ff1f3d;
       }
+      .custom-text-color{
+        color: rgba(23, 23, 23, 0.70);
+      }
     </style>
   </head>
   <body class="md:w-11/12 mx-auto">
+
     <header class="lg:mb-8">
       <nav class="navbar bg-base-100 py-6 lg:py-10">
         <div class="navbar-start">
@@ -73,8 +77,41 @@
 
     <main>
       <!-- category button's------ -->
-      <section>
-        <div id="category-buttons-container" class="flex justify-center items-center gap-10">
+      <section class="mb-6">
+        <div id="category-buttons-container" class="flex justify-center items-center gap-5">
+
+        </div>
+      </section>
+
+      <!-- card sections ===================== -->
+      <section class="">
+        <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6">
+
+            <div class="card w-96  rounded-lg">
+
+                <!-- <figure class=""><img class="w-full" src="https://i.ibb.co/5LRQkKF/stick-and-stones.jpg" alt="Shoes" /></figure>
+                <div class="card-body p-0 py-5">
+               <div class="flex items-start gap-3">
+                <img class="w-[40px] h-[40x] rounded-full" src="https://i.ibb.co/MZ2vbXR/jimm.jpg" alt="">
+                <div>
+                    <h2 class="card-title">
+                        Shoes!
+                      </h2>
+                      <div class="flex items-center my-3 gap-2">
+                        <p class="custom-text-color">If a dog chews</p>
+                        <img src="verifiy-tick.jpg" alt="">
+                      </div>
+                  <div class="card-actions justify-start">
+                    <p class="custom-text-color">91K views</p>
+                  </div>
+                </div>
+               </div>
+                  
+                </div> -->
+
+
+            </div>
+
 
         </div>
       </section>
@@ -82,5 +119,6 @@
 
     <!-- js-files---------------  -->
     <script src="js/categories.js"></script>
+    <script src="js/category-cards.js"></script>
   </body>
 </html>
