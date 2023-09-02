@@ -2,7 +2,7 @@
 const loadCategoryCards = async(id) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`);
     const data = await res.json();
-    const categories = data.data;
+    
     category = data.data;
     // console.log(data.data);
     displayCategoryCards((category))
@@ -30,13 +30,12 @@ const displayCategoryCards = (category) =>{
            </div>
                                     `;
     }
-console.log(category.length);
+// console.log(category.length);
     category.forEach(cat => {
-        // console.log(typeof cat.others.views);
+    // console.log(cat);
 
-        const postedArray = getPostedTime(cat.others.posted_date);
-        console.log(postedArray);
-
+    const postedArray = getPostedTime(cat.others.posted_date);
+        
 const postedDate = `${postedArray[0]}hrs ${postedArray[1]}mins ago`;  
 
         const cardDiv = document.createElement('div');
@@ -77,11 +76,11 @@ const displayInitialCategory = () =>{
     loadCategoryCards(1000)
 }
 
+
 // get post time =================
 const  getPostedTime = (time) =>{
 
 const parsedTime = parseFloat(time);
-// console.log(parsedTime);
 if(isNaN(parsedTime)){
     return '';
 }
@@ -91,5 +90,6 @@ const min = Math.floor(rem / 60);
 
 return [hour,min];
 }
+
 
 displayInitialCategory();
