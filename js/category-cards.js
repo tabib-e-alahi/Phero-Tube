@@ -43,21 +43,21 @@ const postedDate = `${postedArray[0]}hrs ${postedArray[1]}mins ago`;
         cardDiv.innerHTML = `
                 <figure class="p-0 relative">
                     <img class="w-full h-[200px]" src=${cat.thumbnail} alt="Shoes" />
-                    <p class="absolute right-4 bottom-4 text-white bg-[#171717] rounded p-1 ">${postedArray ? postedDate : ''}</p>
+                    <p class="absolute right-4 bottom-4 text-xs text-white bg-[#171717] rounded p-1 ">${postedArray ? postedDate : ''}</p>
                 </figure>
                 <div class="card-body p-0 py-5">
                 
                     <div class="flex items-start gap-3">
                         <img class="w-[40px] h-[40px] rounded-[50%]" src=${cat.authors[0].profile_picture} alt="">
                         <div>
-                            <h2 class="card-title">${cat.authors[0].profile_name}</h2>
+                            <h2 class="card-title font-bold">${cat.title}</h2>
                             <div class="flex items-center my-3 gap-2">
-                                <p class="custom-text-color">${cat.title}</p>
+                                <p class="custom-text-color text-sm">${cat.authors[0].profile_name}</p>
                                 
                                 <img class=${cat.authors[0].verified ? 'flex' : 'hidden'}  src="verify_tick.jpg" alt="">
                             </div>
                             <div class="card-actions justify-start">
-                                <p class="custom-text-color views">${cat.others.views} views</p>
+                                <p class="custom-text-color views text-sm">${cat.others.views} views</p>
                             </div>
                         </div>
                     </div>
