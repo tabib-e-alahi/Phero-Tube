@@ -11,14 +11,22 @@ const displayCategoryButtons = categories =>{
     
     categories.forEach(category => {
         const categoryButton = document.createElement('button');
-        categoryButton.classList.add('btn')
+        categoryButton.classList=`btn active-btn`
         categoryButton.innerText = category.category;
         categoryButton.addEventListener("click", function () {
+
+            const categoryBtns = document.querySelectorAll('.active-btn');
+            
+
+            categoryBtns.forEach(button => {
+                button.classList.remove('custom-color','text-white')
+            })
+            categoryButton.classList.add('custom-color','text-white')
             loadCategoryCards(category.category_id);
-            //  categoryButton.classList.add('custom-color')
         });
         
         categoryButtonsContainer.appendChild(categoryButton);
+        
     } )
 }
 
