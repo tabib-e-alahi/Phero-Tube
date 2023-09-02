@@ -39,7 +39,7 @@ const displayCategoryCards = (category) =>{
 const postedDate = `${postedArray[0]}hrs ${postedArray[1]}mins ago`;  
 
         const cardDiv = document.createElement('div');
-        cardDiv.classList = `card  rounded-lg`;
+        cardDiv.classList = `card  rounded-lg my-card-sort`;
         cardDiv.innerHTML = `
                 <figure class="p-0 relative">
                     <img class="w-full h-[200px]" src=${cat.thumbnail} alt="Shoes" />
@@ -57,7 +57,7 @@ const postedDate = `${postedArray[0]}hrs ${postedArray[1]}mins ago`;
                                 <img class=${cat.authors[0].verified ? 'flex' : 'hidden'}  src="verify_tick.jpg" alt="">
                             </div>
                             <div class="card-actions justify-start">
-                                <p class="custom-text-color">${cat.others.views} views</p>
+                                <p class="custom-text-color views">${cat.others.views} views</p>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ const postedDate = `${postedArray[0]}hrs ${postedArray[1]}mins ago`;
 }
 
 const displayInitialCategory = () =>{
-    loadCategoryCards(1000)
+    loadCategoryCards('1000')
 }
 
 
