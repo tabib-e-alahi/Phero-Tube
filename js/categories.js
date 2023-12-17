@@ -22,6 +22,8 @@ const displayCategoryButtons = categories =>{
                 button.classList.remove('custom-color','text-white')
             })
             categoryButton.classList.add('custom-color','text-white')
+
+            
             loadCategoryCards(category.category_id);
         });
         

@@ -6,6 +6,7 @@ const loadCategoryCards = async(id) =>{
     category = data.data;
     // console.log(data.data);
     displayCategoryCards((category))
+    loadImages(category)
 }
 
 const displayCategoryCards = (category) =>{
